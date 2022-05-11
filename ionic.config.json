@@ -1,0 +1,7 @@
+{
+  "name": "okode-exercise",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
