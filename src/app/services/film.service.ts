@@ -54,9 +54,13 @@ export class FilmService {
         var data = await this.http.get("http://www.omdbapi.com/?apikey=f769527&s=" + searchValue, {}).toPromise();
 
         //console.log(data);
-        var jsonString = JSON.stringify(data['Search']);
+        try {
+            var jsonString = JSON.stringify(data['Search']);
 
-        this.films = JSON.parse(jsonString);
+            this.films = JSON.parse(jsonString);
+        } catch (e) {
+            this.films = [];
+        }
         return this.films;
     }
 

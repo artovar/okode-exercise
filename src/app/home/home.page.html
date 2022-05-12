@@ -18,7 +18,7 @@
       </ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-searchbar debounce="100" [(ngModel)]="searchTerm" (ionInput)="getFilms()" (ionCancel)="getFilms()">
+  <ion-searchbar debounce="100" [(ngModel)]="searchTerm" (ionInput)="getFilms()">
   </ion-searchbar>
   <ion-list>
     <app-film-preview *ngFor="let film of showFilms()" [film]="film"></app-film-preview>
