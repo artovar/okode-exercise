@@ -7,7 +7,11 @@ import { FilmService, Film } from '../services/film.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(private data: FilmService) { }
+  searchTerm: string;
+  films: Film[]
+  constructor(private service: FilmService) {
+    this.getFilms();
+  }
 
   refresh(ev) {
     setTimeout(() => {
@@ -15,9 +19,15 @@ export class HomePage {
     }, 3000);
   }
 
+  getFilms() {
 
-  getFilms(): Film[] {
-    return this.data.getAllFilms();
+    this.service.getAllFilms(this.searchTerm).then((data) => {
+      this.films = data;
+    });
+  }
+
+  showFilms() {
+    return this.films;
   }
 
 }

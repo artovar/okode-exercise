@@ -17,12 +17,12 @@ export class FilmDetailPage implements OnInit {
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.film = this.films.getFilmByID(parseInt(id, 10));
+    this.films.getFilmByID(id).then((data) => { this.film = data; });
   }
 
   getBackButtonText() {
     const win = window as any;
     const mode = win && win.Ionic && win.Ionic.mode;
-    return mode === 'ios' ? 'Peliculas' : '';
+    return mode === 'ios' ? 'Peliculas' : 'Películas';
   }
 }

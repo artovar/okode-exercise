@@ -6,9 +6,28 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" *ngIf="film">
-  <ion-thumbnail class="image-thumbnail"></ion-thumbnail>
-  <!-- <ion-image [src]="film.image"></ion-image> -->
-  <h1>{{film.title}}</h1>
-  <h2>{{film.description}}</h2>
+<ion-content *ngIf="film !=null; else loading" [fullscreen]="true">
+
+
+  <h1>{{film.Title}}</h1>
+  <ion-note>
+    <p>Director: {{film.Director}}</p>
+    <p>Year: {{film.Year}}</p>
+  </ion-note>
+  <ion-card>
+    <h3>Plot</h3>
+    <p>{{film.Plot}}</p>
+  </ion-card>
+  <ion-card>
+    <ion-img [src]=film.Poster></ion-img>
+  </ion-card>
+
+  <br>
 </ion-content>
+
+
+<ng-template #loading>
+  <ion-content [fullscreen]="true">
+    <ion-progress-bar type="indeterminate"></ion-progress-bar>
+  </ion-content>
+</ng-template>
