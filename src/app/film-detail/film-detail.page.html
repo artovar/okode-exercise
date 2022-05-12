@@ -8,7 +8,6 @@
 
 <ion-content *ngIf="film !=null; else loading" [fullscreen]="true">
 
-
   <h1>{{film.Title}}</h1>
   <ion-note>
     <p>Director: {{film.Director}}</p>
@@ -24,7 +23,6 @@
 
   <br>
 </ion-content>
-
 
 <ng-template #loading>
   <ion-content [fullscreen]="true">

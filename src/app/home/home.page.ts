@@ -21,7 +21,7 @@ export class HomePage {
 
   getFilms() {
 
-    this.service.getAllFilms(this.searchTerm).then((data) => {
+    this.service.searchFilms(this.searchTerm).then((data) => {
       this.films = data;
     });
   }
