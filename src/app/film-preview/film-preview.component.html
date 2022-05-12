@@ -1,0 +1,21 @@
+<ion-item *ngIf="film" [routerLink]="'/film/'+ film.id" [detal]="false">
+
+  <div slot="start">
+
+    <ion-label>
+      <h2>
+        {{film.title}}
+        <span class="director">
+          <ion-note>{{film.director}}</ion-note>
+          <ion-icon name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
+        </span>
+      </h2>
+      <h3>{{film.year}}</h3>
+      <p>
+        {{film.description}}
+      </p>
+    </ion-label>
+
+  </div>
+
+</ion-item>

@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="film">
+  <ion-thumbnail class="image-thumbnail"></ion-thumbnail>
+  <!-- <ion-image [src]="film.image"></ion-image> -->
+  <h1>{{film.title}}</h1>
+  <h2>{{film.description}}</h2>
+</ion-content>
